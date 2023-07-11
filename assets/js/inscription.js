@@ -36,9 +36,11 @@ button.addEventListener('click', function(evenement){
     
     if(mdp != confirmemdp){
         console.log("La confirmation du mot de passe ne correspond pas. Veuillez réessayer en vous assurant de saisir le même mot de passe dans les deux champs.")
+        alert("La confirmation du mot de passe ne correspond pas. Veuillez réessayer en vous assurant de saisir le même mot de passe dans les deux champs.")
     }
     else {
         console.log("Parfait ! Les mots de passe correspondent. Vous pouvez continuer votre inscription en toute sécurité.")
+        alert("Parfait ! Les mots de passe correspondent. Vous pouvez continuer votre inscription en toute sécurité.")
     }
 })
 
