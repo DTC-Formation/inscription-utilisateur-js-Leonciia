@@ -22,7 +22,25 @@
     box-shadow: #BE8C01 0px 54px 55px, #BE8C01 0px -12px 30px, #BE8C01 0px 4px 6px, #BE8C01 0px 12px 13px, #BE8C01
 }
 
+.paragraphe-strong{
+    color: green;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.paragraphe-span{
+    color: red;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
 .paragraphe{
+    color: red;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.paragraphe-bold{
     color: red;
     font-size: 13px;
     font-weight: bolder;

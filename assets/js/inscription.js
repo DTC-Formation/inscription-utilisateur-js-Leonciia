@@ -15,32 +15,41 @@ button.addEventListener('click', function(evenement){
     let age = inputAge.value
     let mdp = inputMdp.value
     let confirmemdp = inputConfirmeMdp.value
-    const p = document.querySelector('p')
-    p.textContent = 'NOM : ' + nom +' - - - - - - - - - - - - - - -';
-    p.textContent += ' - - - - - - - - - - - - '+' PRENOM : ' + prenom +' - - - - - - - - - - - - ';
-    p.textContent += ' - - - - - - - - - - - - '+ 'E-MAIL : ' + mail +' - - - - - - - - - - - - - ';
-    p.textContent += ' - - - - - - - - - - - - '+ 'MOT DE PASSE : ' + mdp +' - - - - - - - - - - - - - - - - -';
-    p.textContent += ' - - - - - - - - - - - - '+ 'CONFIRMATION DE MOT DE PASSE : ' + confirmemdp +' - - - - - - - - - -';
+    const strong = document.querySelector('strong')
+    strong.textContent = 'NOM : ' + nom +' - - - - - - - - - - - - - - -';
+    strong.textContent += ' - - - - - - - - - - - - '+' PRENOM : ' + prenom +' - - - - - - - - - - - - ';
+    strong.textContent += ' - - - - - - - - - - - - '+ 'E-MAIL : ' + mail +' - - - - - - - - - - - - - ';
+    strong.textContent += ' - - - - - - - - - - - - '+ 'MOT DE PASSE : ' + mdp +' - - - - - - - - - - - - - - - - -';
+    strong.textContent += ' - - - - - - - - - - - - '+ 'CONFIRMATION DE MOT DE PASSE : ' + confirmemdp +' - - - - - - - - - -';
 
+    const b = document.querySelector('b') 
     if(age>=18){
-        p.textContent += '- - - - - - - '+ ' AGE : ' +age +' ans'+' - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - -'
+        strong.textContent += '- - - - - - - '+ ' AGE : ' +age +' ans'+' - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - -'
     }
     else{
-        p.textContent = 'L\'accès est interdit aux personnes de moins de 18 ans.'
-    }  
+        b.textContent = 'L\'accès est interdit aux personnes de moins de 18 ans.'
+    } 
     
+    const p = document.querySelector('p') 
     if(nom=='' || prenom==''|| age==''|| mail==''|| 
     mdp==''|| confirmemdp==''){
         p.textContent = 'Veuillez remplir tous les champs du formulaire.'
     }
+    if(nom!='' && prenom!=''&& age!=''&& mail!=''&& 
+    mdp!=''&& confirmemdp!=''){
+        alert("Parfait ! Les conditions sont bien remplies. Vous pouvez continuer votre inscription en toute sécurité.")
+
+    }
     
+    const span = document.querySelector('span')
     if(mdp != confirmemdp){
         console.log("La confirmation du mot de passe ne correspond pas. Veuillez réessayer en vous assurant de saisir le même mot de passe dans les deux champs.")
-        alert("La confirmation du mot de passe ne correspond pas. Veuillez réessayer en vous assurant de saisir le même mot de passe dans les deux champs.")
+        // alert("La confirmation du mot de passe ne correspond pas. Veuillez réessayer en vous assurant de saisir le même mot de passe dans les deux champs.")
+        span.textContent = 'La confirmation du mot de passe ne correspond pas. Veuillez réessayer en vous assurant de saisir le même mot de passe dans les deux champs.'
     }
     else {
         console.log("Parfait ! Les mots de passe correspondent. Vous pouvez continuer votre inscription en toute sécurité.")
-        alert("Parfait ! Les mots de passe correspondent. Vous pouvez continuer votre inscription en toute sécurité.")
+        // alert("Parfait ! Les mots de passe correspondent. Vous pouvez continuer votre inscription en toute sécurité.")
     }
 })
 
