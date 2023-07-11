@@ -9,7 +9,9 @@
 }
 
 .text-uppercase{
-    color: rgb(59, 59, 59);
+    color: #BE8C01;
+    font: weight 300 ;
+    
 }
 
 .card{
@@ -22,6 +24,30 @@
     box-shadow: #BE8C01 0px 54px 55px, #BE8C01 0px -12px 30px, #BE8C01 0px 4px 6px, #BE8C01 0px 12px 13px, #BE8C01
 }
 
+.paragraphe{
+    color: red;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.paragraphe-h4{
+    color: red;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.paragraphe-blockquote{
+    color: red;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.paragraphe-article{
+    color: red;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
 .paragraphe-strong{
     color: green;
     font-size: 13px;
@@ -29,12 +55,6 @@
 }
 
 .paragraphe-span{
-    color: red;
-    font-size: 13px;
-    font-weight: bolder;
-}
-
-.paragraphe{
     color: red;
     font-size: 13px;
     font-weight: bolder;
@@ -65,4 +85,10 @@
 
   .gap-2{
     margin-bottom: 20px;
+  }
+
+  .note{
+    font-size: 11px;
+    margin-top: 30px;
+    text-align: center;
   }
