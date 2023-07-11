@@ -16,29 +16,28 @@ button.addEventListener('click', function(evenement){
     let mdp = inputMdp.value
     let confirmemdp = inputConfirmeMdp.value
     const strong = document.querySelector('strong')
-    strong.textContent = 'NOM : ' + nom +' - - - - - - - - - - - - - - -';
-    strong.textContent += ' - - - - - - - - - - - - '+' PRENOM : ' + prenom +' - - - - - - - - - - - - ';
-    strong.textContent += ' - - - - - - - - - - - - '+ 'E-MAIL : ' + mail +' - - - - - - - - - - - - - ';
-    strong.textContent += ' - - - - - - - - - - - - '+ 'MOT DE PASSE : ' + mdp +' - - - - - - - - - - - - - - - - -';
-    strong.textContent += ' - - - - - - - - - - - - '+ 'CONFIRMATION DE MOT DE PASSE : ' + confirmemdp +' - - - - - - - - - -';
+    strong.textContent = 'NOM : ' + nom +' - - - - - - - - - - - - - - - - ';
+    strong.textContent += ' - - - - - - - - - - - - '+' PRENOM : ' + prenom +' - - - - - - - - - - - ';
+    strong.textContent += ' - - - - - - - - - - - - '+ 'E-MAIL : ' + mail +' - - - - - - - - - - - ';
+    strong.textContent += ' - - - - - - - - - '+ 'MOT DE PASSE : ' + mdp +' - - - - - - - - - - - - - - - - -';
+    strong.textContent += ' - - - - - - - - - - - - '+ 'CONFIRMATION DE MOT DE PASSE : ' + confirmemdp +' - - - - - - - -';
 
     const b = document.querySelector('b') 
     if(age>=18){
-        strong.textContent += '- - - - - - - '+ ' AGE : ' +age +' ans'+' - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - -'
+        strong.textContent += '- - - - - - - '+ ' AGE : ' +age +' ans'+' - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - -'
     }
     else{
-        b.textContent = 'L\'accès est interdit aux personnes de moins de 18 ans.'
+        b.textContent = '* L\'accès est interdit aux personnes de moins de 18 ans.'
     } 
     
     const p = document.querySelector('p') 
-    if(nom=='' || prenom==''|| age==''|| mail==''|| 
-    mdp==''|| confirmemdp==''){
-        p.textContent = 'Veuillez remplir tous les champs du formulaire.'
-    }
     if(nom!='' && prenom!=''&& age!=''&& mail!=''&& 
-    mdp!=''&& confirmemdp!=''){
+    mdp!=''&& confirmemdp!='' && (mdp == confirmemdp) && (age>=18)){
         alert("Parfait ! Les conditions sont bien remplies. Vous pouvez continuer votre inscription en toute sécurité.")
-
+    }
+    else  if(nom=='' || prenom==''|| age==''|| mail==''|| 
+    mdp==''|| confirmemdp==''  && (mdp != confirmemdp)){
+        p.textContent = '* Veuillez remplir tous les champs du formulaire.'
     }
     
     const span = document.querySelector('span')
@@ -53,6 +52,7 @@ button.addEventListener('click', function(evenement){
     }
 })
 
+// change???
 // if(inputMdp != inputConfirmeMdp){
 //     inputConfirmeMdp.addEventListener('change', function(){
 //         console.log('MDP NON VALIDE')
