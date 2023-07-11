@@ -1,0 +1,50 @@
+.bg-image{
+    background-image: url("../img/fond.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-body{
+    background: rgb(226, 231, 235);
+}
+
+.text-uppercase{
+    color: rgb(59, 59, 59);
+}
+
+.card{
+    margin: 20PX;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.form-control{
+    border: 4px solid ;
+}
+
+.paragraphe{
+    color: red;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #BE8C01 !important;
+    --bs-btn-border-color: #BE8C01 !important;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #E9B301 !important;
+    --bs-btn-hover-border-color: #E9B301 !important;
+    --bs-btn-focus-shadow-rgb: 60,153,110;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #E9B301 !important;
+    --bs-btn-active-border-color: #E9B301 !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #BE8C01 !important;
+    --bs-btn-disabled-border-color: #BE8C01 !important;
+  }
+
+  .gap-2{
+    margin-bottom: 20px;
+  }
