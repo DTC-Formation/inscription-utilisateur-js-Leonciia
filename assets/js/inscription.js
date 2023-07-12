@@ -12,31 +12,34 @@ button.addEventListener('click', function(evenement){
     evenement.preventDefault();
     let nom = inputNom.value
     const h4 = document.querySelector('h4') 
-    // var Regex = !/^[A-Za-z]+$/;
+    // Regex // !/^[A-Za-z]+$/; maj ou min // /[\wÀ-ÿ ] accepte é et espace
     if(nom==''){
         h4.textContent = '* Veuillez saisir votre nom.'
         console.log('* Veuillez saisir votre nom.');
     }
     else if(!/^[A-Za-z]+$/.test(nom)){
-        h4.textContent = '* Veuillez saisir un texte.'
+        h4.textContent = '* Veuillez saisir un texte sans espace.'
+        console.log('* Veuillez saisir un texte.');
+    }
+    else if(/^[a-z]+$/.test(nom)){
+        h4.textContent = '* Veuillez saisir un nom commençant en majuscule et sans espace.'
         console.log('* Veuillez saisir un texte.');
     }
     else{
-        console.log('Votre nom est:' +nom);
+        console.log('Votre nom est: ' +nom);
     }
     let prenom = inputPrenom.value
-    
     const blockquote = document.querySelector('blockquote') 
     if(prenom==''){
         blockquote.textContent = '* Veuillez saisir votre prenom.'
         console.log('* Veuillez saisir votre prenom.');
     }
-    else if(!/^[A-Za-z]+$/.test(prenom)){
+    else if(!/[\wÀ-ÿ ]+/g.test(prenom)){
         blockquote.textContent = '* Veuillez saisir un texte.'
         console.log('* Veuillez saisir un texte.');
     }
     else{
-        console.log('Votre prenom est:' +prenom);
+        console.log('Votre prenom est: ' +prenom);
     }
     let mail = inputMail.value
     // ou var mail = document.getElementById('emailInput').value;
@@ -47,8 +50,8 @@ button.addEventListener('click', function(evenement){
         console.log('* Veuillez saisir votre email.');
     }
     else if (mailValid) {
-        console.log('Adresse e-mail valide');
-        console.log('Votre email est:' +mail);
+       // console.log('Adresse e-mail valide');
+        console.log('Votre email est: ' +mail);
     } 
     else {
         article.textContent = '* Adresse e-mail invalide.'
@@ -62,19 +65,19 @@ button.addEventListener('click', function(evenement){
         b.textContent = '* Veuillez saisir votre age.'
         console.log('* Veuillez saisir votre age.');
     }
-    if(age>=18){
+    else if(age>=18){
         b.textContent += '- - - - - - - '+ ' AGE : ' +age +' ans'+' - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - -'
-        console.log('Votre age est:' +age);
+        console.log('Votre age est: ' +age);
     }
     else{
         b.textContent = '* L\'accès est interdit aux personnes de moins de 18 ans.'
-        console.log('L\'accès est interdit aux personnes de moins de 18 ans.')
+        console.log('* L\'accès est interdit aux personnes de moins de 18 ans.')
     } 
     const p = document.querySelector('p') 
     if(nom!='' && prenom!=''&& age!=''&& mail!=''&& 
     mdp!=''&& confirmemdp!='' && (mdp == confirmemdp) && (age>=18)){
         alert("Parfait ! Les conditions sont bien remplies. Vous pouvez continuer votre inscription en toute sécurité.")
-        console.log('Votre mot de passe actuel est:'  +mdp);
+        console.log('Votre mot de passe actuel est: '  +mdp);
     }
     else  if(nom=='' || prenom==''|| age==''|| mail==''|| 
     mdp==''|| confirmemdp==''  && (mdp != confirmemdp)){
