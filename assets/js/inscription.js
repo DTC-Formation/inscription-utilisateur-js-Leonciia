@@ -1,6 +1,4 @@
 let inputNom = document.getElementById('nom')
-inputNom.type = 'text';
-inputNom.required = true;
 let inputPrenom = document.getElementById('prenom')
 inputPrenom.required = true;
 let inputMail = document.getElementById('mail')
@@ -30,7 +28,7 @@ button.addEventListener('click', function(evenement){
         blockquote.textContent = '* Veuillez saisir votre prenom.'
         console.log('* Veuillez saisir votre prenom.');
     }
-    if((/^[A-Z][A-Za-z ]*$/.test(prenom))){
+    else if((/^[A-Z][A-Za-z ]*$/.test(prenom))){
         console.log('Votre prenom est: ' +prenom);
     }
     else if((/^[A-Z][A-Za-z]*$/.test(prenom))){
@@ -120,7 +118,7 @@ button.addEventListener('click', function(evenement){
     } 
 })
 
-// change???
+// change??? TSY AIKO
 // if(inputMdp != inputConfirmeMdp){
 //     inputConfirmeMdp.addEventListener('change', function(){
 //         console.log('MDP NON VALIDE')
