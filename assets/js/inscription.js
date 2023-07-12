@@ -18,8 +18,8 @@ button.addEventListener('click', function(evenement){
         console.log('* Veuillez saisir votre nom.');
     }
     else if(!/^[A-Z]+$/.test(nom)){
-        h4.textContent = '* Veuillez saisir un nom en majuscule et sans epsace.'
-        console.log('* Veuillez saisir un nom en majuscule et sans epsace.');
+        h4.textContent = '* Veuillez saisir un texte tout en majuscule et sans epsace.'
+        console.log('* Veuillez saisir un texte tout en majuscule et sans epsace.');
     }
     else{
         console.log('Votre nom est: ' +nom);
@@ -30,16 +30,14 @@ button.addEventListener('click', function(evenement){
         blockquote.textContent = '* Veuillez saisir votre prenom.'
         console.log('* Veuillez saisir votre prenom.');
     }
-    else if((!/^[A-Za-z]+$/.test(prenom)) && (!/[\wÀ-ÿ ]+/g.test(prenom))){
-        blockquote.textContent = '* Veuillez saisir un texte.'
-        console.log('* Veuillez saisir un texte.');
-    }
-    // else if(/[\wÀ-ÿ ]+/g.test(prenom)){
-    //     blockquote.textContent = '* Veuillez saisir un texte.'
-    //     console.log('* Veuillez saisir un texte.');
-    // }
-    else{
+    if((/^[A-Z][A-Za-z ]*$/.test(prenom))){
         console.log('Votre prenom est: ' +prenom);
+    }
+    else if((/^[A-Z][A-Za-z]*$/.test(prenom))){
+        console.log('Votre prenom est: ' +prenom);
+    }
+    else{
+        blockquote.textContent = '* Veuillez saisir un texte commençant en majuscule.'
     }
     let mail = inputMail.value
     // ou var mail = document.getElementById('emailInput').value;
