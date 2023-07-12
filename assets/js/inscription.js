@@ -17,13 +17,9 @@ button.addEventListener('click', function(evenement){
         h4.textContent = '* Veuillez saisir votre nom.'
         console.log('* Veuillez saisir votre nom.');
     }
-    else if(!/^[A-Za-z]+$/.test(nom)){
-        h4.textContent = '* Veuillez saisir un texte sans espace.'
-        console.log('* Veuillez saisir un texte.');
-    }
-    else if(/^[a-z]+$/.test(nom)){
-        h4.textContent = '* Veuillez saisir un nom commençant en majuscule et sans espace.'
-        console.log('* Veuillez saisir un texte.');
+    else if(!/^[A-Z]+$/.test(nom)){
+        h4.textContent = '* Veuillez saisir un nom en majuscule et sans epsace.'
+        console.log('* Veuillez saisir un nom en majuscule et sans epsace.');
     }
     else{
         console.log('Votre nom est: ' +nom);
@@ -34,10 +30,14 @@ button.addEventListener('click', function(evenement){
         blockquote.textContent = '* Veuillez saisir votre prenom.'
         console.log('* Veuillez saisir votre prenom.');
     }
-    else if(!/[\wÀ-ÿ ]+/g.test(prenom)){
+    else if((!/^[A-Za-z]+$/.test(prenom)) && (!/[\wÀ-ÿ ]+/g.test(prenom))){
         blockquote.textContent = '* Veuillez saisir un texte.'
         console.log('* Veuillez saisir un texte.');
     }
+    // else if(/[\wÀ-ÿ ]+/g.test(prenom)){
+    //     blockquote.textContent = '* Veuillez saisir un texte.'
+    //     console.log('* Veuillez saisir un texte.');
+    // }
     else{
         console.log('Votre prenom est: ' +prenom);
     }
