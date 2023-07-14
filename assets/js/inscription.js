@@ -28,15 +28,16 @@ button.addEventListener('click', function(evenement){
         blockquote.textContent = '* Veuillez saisir votre prenom.'
         console.log('* Veuillez saisir votre prenom.');
     }
-    else if((/^[A-Z][A-Za-z ]*$/.test(prenom))){
+    if((!/^[A-Z][A-Za-z ]*$/.test(prenom))){
+         blockquote.textContent = '* Veuillez saisir un texte commençant en majuscule.'
+         console.log('Votre prenom est: ' +prenom);
+    }
+    if((!/^[A-Z][A-Za-z]*$/.test(prenom))){
         console.log('Votre prenom est: ' +prenom);
     }
-    else if((/^[A-Z][A-Za-z]*$/.test(prenom))){
-        console.log('Votre prenom est: ' +prenom);
-    }
-    else{
-        blockquote.textContent = '* Veuillez saisir un texte commençant en majuscule.'
-    }
+    // else{
+    //     blockquote.textContent = '* Veuillez saisir un texte commençant en majuscule.'
+    // }
     let mail = inputMail.value
     // ou var mail = document.getElementById('emailInput').value;
     const article = document.querySelector('article') 
@@ -62,7 +63,6 @@ button.addEventListener('click', function(evenement){
         console.log('* Veuillez saisir votre age.');
     }
     else if(age>=18){
-        b.textContent += '- - - - - - - '+ ' AGE : ' +age +' ans'+' - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - -'
         console.log('Votre age est: ' +age);
     }
     else{
@@ -112,9 +112,10 @@ button.addEventListener('click', function(evenement){
     mdp!=''&& confirmemdp!='' && (mdp == confirmemdp) && (age>=18)){
         strong.textContent = 'NOM : ' + nom +' - - - - - - - - - - - - - - - - ';
         strong.textContent += ' - - - - - - - - - - - - '+' PRENOM : ' + prenom +' - - - - - - - - - - - ';
+        strong.textContent += '- - - - - - - - - - - - -'+ ' AGE : ' +age +' ans'+' - - - - - - - - - - - - - - - - - - - - - - - -'
         strong.textContent += ' - - - - - - - - - - - - '+ 'E-MAIL : ' + mail +' - - - - - - - - - - - ';
-        strong.textContent += ' - - - - - - - - - '+ 'MOT DE PASSE : ' + mdp +' - - - - - - - - - - - - - - - - -';
-        strong.textContent += ' - - - - - - - - - - - - '+ 'CONFIRMATION DE MOT DE PASSE : ' + confirmemdp +' - - - - - - - -';
+        strong.textContent += ' - - - - - - - - - '+ 'MOT DE PASSE : ' + mdp +' - - - - - - - - - - - - ';
+        strong.textContent += ' - - - - - - - - '+ 'CONFIRMATION DE MOT DE PASSE : ' + confirmemdp +' - - - - - - - -';
     } 
 })
 
@@ -130,3 +131,12 @@ button.addEventListener('click', function(evenement){
 //     })
 // }
 
+const themeToggle = document.getElementById('theme-toggle');
+
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark');
+});
+
+// Il ne reste plus qu'à ajouter : ".dark" avant chaque style css
