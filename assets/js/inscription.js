@@ -1,6 +1,5 @@
 let inputNom = document.getElementById('nom')
 let inputPrenom = document.getElementById('prenom')
-inputPrenom.required = true;
 let inputMail = document.getElementById('mail')
 let inputAge = document.getElementById('age')
 let inputMdp = document.getElementById('mdp')
@@ -110,12 +109,12 @@ button.addEventListener('click', function(evenement){
     const strong = document.querySelector('strong')
     if(nom!='' && prenom!=''&& age!=''&& mail!=''&& 
     mdp!=''&& confirmemdp!='' && (mdp == confirmemdp) && (age>=18)){
-        strong.textContent = 'NOM : ' + nom +' - - - - - - - - - - - - - - - - ';
-        strong.textContent += ' - - - - - - - - - - - - '+' PRENOM : ' + prenom +' - - - - - - - - - - - ';
-        strong.textContent += '- - - - - - - - - - - - -'+ ' AGE : ' +age +' ans'+' - - - - - - - - - - - - - - - - - - - - - - - -'
-        strong.textContent += ' - - - - - - - - - - - - '+ 'E-MAIL : ' + mail +' - - - - - - - - - - - ';
-        strong.textContent += ' - - - - - - - - - '+ 'MOT DE PASSE : ' + mdp +' - - - - - - - - - - - - ';
-        strong.textContent += ' - - - - - - - - '+ 'CONFIRMATION DE MOT DE PASSE : ' + confirmemdp +' - - - - - - - -';
+        strong.textContent = 'NOM : ' + nom +' | ';
+        strong.textContent += ' |  '+' PRENOM : ' + prenom +' | ';
+        strong.textContent += ' | '+ ' AGE : ' +age +' ans'+' | '
+        strong.textContent += ' |  '+ 'E-MAIL : ' + mail +' | ';
+        strong.textContent += ' | '+ 'MOT DE PASSE : ' + mdp +' |  ';
+        strong.textContent += ' | '+ 'CONFIRMATION DE MOT DE PASSE : ' + confirmemdp +' | ';
     } 
 })
 
